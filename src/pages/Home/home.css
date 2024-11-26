@@ -1,0 +1,146 @@
+/* Basic Reset */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+/* Header Styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100px;
+    background-color: #12133d;
+    box-shadow: none;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.header.scrolled {
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #12133d;
+}
+  
+/* Logo */
+.logo img {
+    height: 80px;
+    width: 80px;
+  }
+  
+  /* Desktop Navigation */
+  .nav {
+      display: flex;
+    align-items: center;
+}
+  
+.nav-list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+  .nav-item {
+      margin: 0 15px;
+      font-size: 1rem;
+      background: linear-gradient(90deg, #2fa5f6, #a215fe);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.nav-item:hover {
+      font-size: 1.1rem;
+      background: linear-gradient(90deg, white, white);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    color: #7333bb;
+  }
+  
+  /* Get Started Button */
+  .get-started {
+    color: white;
+    background: linear-gradient(90deg, #2fa5f6, #a215fe);
+    border: none;
+    padding: 10px 20px;
+    margin-left: 20px;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .get-started:hover {
+    background-color: #280a47;
+  }
+  
+  /* Theme Toggle */
+  .theme-toggle {
+    margin-left: 20px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2fa5f6;
+    transition: color 0.3s ease;
+  }
+  
+  .theme-toggle:hover {
+    color: #a215fe;
+  }
+  
+  /* Burger Menu */
+  .burger-menu {
+    display: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .burger-menu:hover {
+    color: #2fa5f6;
+  }
+  
+  /* Mobile Menu */
+  .mobile-menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    background-color: #12133d;
+    padding: 20px 0;
+  }
+  
+  .mobile-menu.active {
+    display: flex;
+  }
+  
+  .mobile-menu .nav-item {
+    margin: 10px 0;
+    color: white;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .nav-list,
+    .get-started,
+    .theme-toggle {
+      display: none;
+    }
+  
+    .burger-menu {
+      display: block;
+    }
+  }
+  

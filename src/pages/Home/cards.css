@@ -1,0 +1,62 @@
+.animated-cards-section {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f8f9fa;
+  }
+  
+  .section-heading {
+    font-size: 2.5rem;
+    color: #280a47;
+    margin-bottom: 30px;
+  }
+  
+  .cards-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    height: 200px;
+  }
+  
+  .card {
+    min-width: 200px;
+    max-width: 300px;
+    height: 150px;
+    background-color: #7333bb;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    margin: 0 10px;
+    animation: slideIn 1s ease-in-out;
+  }
+  
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .cards-container {
+      display: flex;
+      flex-direction: column;
+      height: auto;
+    }
+  
+    .card {
+      margin: 20px auto;
+      max-width: 80%;
+    }
+  }
+  
