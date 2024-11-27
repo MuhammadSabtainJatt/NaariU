@@ -1,139 +1,149 @@
 /* General Reset */
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-  }
-  
-  /* thirdcomp Section Styles */
-  .thirdcomp {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    padding: 50px;
-    background-color: #f5f5f5;
-    height: 100vh;
-    box-sizing: border-box;
-  }
-  
-  /* Left Section */
-  .thirdcomp-left {
-    flex: 1;
-    padding-right: 20px;
-  }
-  .thirdcomp-image {
-    max-width: 100%;
-    height: auto;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* thirdcomp Section Styles */
+.thirdcomp {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 50px;
+  background-color: #f5f5f5;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+/* Left Section */
+.thirdcomp-left {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.thirdcomp-image {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Right Section */
+.thirdcomp-right {
+  flex: 1;
+  justify-content: s;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.feature-card {
+  display: flex;
+  gap: 15px;
+  margin: 15px 0;
+  transform: translateX(100%);
+  /* Initial position to the right */
+  opacity: 0;
+  animation: sideIn 1s ease-in forwards;
+}
+
+.feature-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 24px;
+}
+
+.feature-content {
+  text-align: left;
+}
+
+.feature-title {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #280a47;
+}
+
+.feature-description {
+  margin: 5px 0 0 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Side-In Animation */
+@keyframes sideIn {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+    /* Start from the right */
   }
 
-  /* Right Section */
-  .thirdcomp-right {
-    flex: 1;
-    display: flex;
+  to {
+    opacity: 1;
+    transform: translateX(0);
+    /* End at the normal position */
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .thirdcomp {
     flex-direction: column;
-    gap: 20px;
+    text-align: center;
+    height: auto;
+    padding: 20px;
   }
-  
-  .feature-card {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin: 15px 0;
-    transform: translateX(-100%);
-    animation: slideIn 1s ease-in forwards;
+
+  .thirdcomp-left {
+    padding: 0;
   }
-  
-  .feature-icon {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
+
+  .thirdcomp-heading {
+    font-size: 2.5rem;
+  }
+
+  .thirdcomp-text {
+    font-size: 1rem;
+  }
+
+  .thirdcomp-buttons {
     justify-content: center;
-    align-items: center;
-    color: #fff;
-    font-size: 24px;
   }
-  
-  .feature-content {
-    text-align: left;
+
+  .thirdcomp-right {
+    align-items: left;
   }
-  
-  .feature-title {
-    margin: 0;
-    font-size: 1.2rem;
-    color: #280a47;
+}
+
+@media (max-width: 768px) {
+  .thirdcomp-heading {
+    font-size: 2rem;
   }
-  
-  .feature-description {
-    margin: 5px 0 0 0;
+
+  .thirdcomp-text {
     font-size: 0.9rem;
-    color: #555;
   }
-  
-  @keyframes slideIn {
-    from {
-      opacity: 0;
-      transform: translateX(10%);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
+
+  .thirdcomp-buttons {
+    gap: 10px;
   }
-  /* Responsive Design */
-  @media (max-width: 1024px) {
-    .thirdcomp {
-      flex-direction: column;
-      text-align: center;
-      height: auto;
-      padding: 20px;
-    }
-  
-    .thirdcomp-left {
-      padding: 0;
-    }
-  
-    .thirdcomp-heading {
-      font-size: 2.5rem;
-    }
-  
-    .thirdcomp-text {
-      font-size: 1rem;
-    }
-  
-    .thirdcomp-buttons {
-      justify-content: center;
-    }
-  
-    .thirdcomp-right {
-      align-items: center;
-    }
+
+  .thirdcomp-button {
+    justify-content: center;
   }
-  
-  @media (max-width: 768px) {
-    .thirdcomp-heading {
-      font-size: 2rem;
-    }
-  
-    .thirdcomp-text {
-      font-size: 0.9rem;
-    }
-  
-    .thirdcomp-buttons {
-      flex-direction: column;
-      gap: 10px;
-    }
-  
-    .thirdcomp-button {
-      justify-content: center;
-    }
-  
-    .feature-card {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .feature-icon {
-      margin-bottom: 10px;
-    }
+
+  .feature-card {
+    flex-direction: row;
   }
-  
+
+  .feature-icon {
+    /* margin-bottom: 10px; */
+    font-size: 12px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    padding: 0px;
+  }
+}
