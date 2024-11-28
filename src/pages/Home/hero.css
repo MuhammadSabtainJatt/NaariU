@@ -58,7 +58,23 @@ background-size: cover;
     cursor: pointer;
     transition: background-color 0.3s ease;
   }
+  .button-Counter{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: #280a47;
+    padding: 5px 20px;
+    border: 1px solid #280a47;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    
+  }
   
+  .button-Counter:hover{
+    box-shadow: 0 0 10px #280a47;
+  }
   .hero-button:hover {
     background-color: #7333bb;
   }
@@ -75,7 +91,12 @@ background-size: cover;
     color: #ccc;
   }
   
-  .hero-button strong {
+  .button-Counter strong{
+
+    font-size: 1.5rem;
+    color: #280a47;
+  }
+  .hero-button strong{
     font-size: 1.1rem;
     color: white;
   }

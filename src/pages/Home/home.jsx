@@ -4,7 +4,7 @@ import Logo from '../../Asset/images/NaariU Logo.png';
 import './home.css';
 import Home from './hero';
 import Third from './thirdComponent';
-
+import Card from './card'
 const Header = () => {
   const [darkMode, setDarkMode] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -12,6 +12,7 @@ const Header = () => {
   // References to target components
   const homeRef = useRef(null);
   const thirdRef = useRef(null);
+  const CardRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -64,7 +65,10 @@ const Header = () => {
               About
             </a>
           </li>
-          <li><a href="#services">Services</a></li>
+          <li><a href="#services" onClick={(e)=>{
+            e.preventDefault()
+            scrollToSection(Card)
+          }}>Services</a></li>
           <li><a href="#portfolio">Portfolio</a></li>
           <li><a href="#team">Team</a></li>
           <li><a href="#blog">Blog</a></li>
@@ -88,6 +92,9 @@ const Header = () => {
       </div>
       <div ref={thirdRef}>
         <Third id="third" />
+      </div>
+      <div ref={CardRef}>
+        <Card id="services" />
       </div>
     </>
   );

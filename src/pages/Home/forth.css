@@ -1,0 +1,126 @@
+/* Container */
+.two-portions-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px;
+  gap: 20px;
+  flex-wrap: wrap; /* Enable wrapping for responsiveness */
+}
+
+
+
+
+.heading {
+  margin-top: 20px;
+  font-size: 2.2rem; /* Adjust for responsiveness */
+  color: #280a47;
+}
+
+.left-portion{
+  width: 50%;
+  margin: 0;
+  padding: 0;
+}
+.fade-up {
+  /* width: 50%; */
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeUp 1s ease-in-out forwards;
+}
+
+/* Keyframe for fade-up animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* Info Div Styles */
+.info-div h2 {
+  color: #280a47;
+  margin-bottom: 10px;
+  font-size: 1.5rem; /* Adjust for responsiveness */
+}
+
+.info-div p {
+  color: #989898;
+  margin:0 0 10px 0;
+  font-size: 1rem; /* Adjust for responsiveness */
+}
+
+/* Right Portion */
+.right-portion {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+@media (max-width:1000px){
+  .two-portions-container {
+    flex-direction: column; /* Stack the portions */
+    padding: 20px; /* Reduce padding for smaller screens */
+  }
+  .left-portion{
+    width: 100%;
+  }
+}
+/* Responsive Styles */
+@media (max-width: 768px) {
+
+  .left-portion {
+    order: 2; /* Place the text below the image */
+  }
+
+  .info-div h2 {
+    font-size: 1.3rem;
+  }
+
+  .info-div p {
+    font-size: 0.9rem;
+  }
+
+  .right-portion {
+    order: 1; /* Place the image above the text */
+  }
+  .fade-up {
+    width: 100%;
+  }
+  .image {
+    max-width: 100%; /* Make the image take full width */
+    height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  /* .info-div h2 {
+    font-size: 1.1rem;
+  } */
+  .fade-up {
+    width: 100%;
+  }
+  /* .info-div p {
+    font-size: 0.8rem;
+  } */
+
+  .two-portions-container {
+    gap: 10px;
+  }
+
+  .info-div {
+    margin: 15px 0;
+  }
+}

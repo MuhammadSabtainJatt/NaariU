@@ -3,6 +3,7 @@ import "./thirdComponent.css";
 import { FaStar, FaUsers, FaQuestionCircle, FaCommentDots, FaDollarSign } from "react-icons/fa";
 import thirdcompImage from "../../Asset/images/Picture5.png";
 import Revenue from './revenue'
+import Forth from './forth'
 
 const ThirdCompSection = () => {
   const features = [
@@ -90,6 +91,7 @@ const ThirdCompSection = () => {
       </div>
     </section>
     <Revenue />
+    <Forth />
     
     </>
   );
