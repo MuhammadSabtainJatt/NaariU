@@ -5,6 +5,7 @@ import './home.css';
 import Home from './hero';
 import Third from './thirdComponent';
 import Card from './card'
+import { Link } from 'react-router-dom';
 const Header = () => {
   const [darkMode, setDarkMode] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -12,7 +13,7 @@ const Header = () => {
   // References to target components
   const homeRef = useRef(null);
   const thirdRef = useRef(null);
-  const CardRef = useRef(null);
+  const cardRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -67,12 +68,12 @@ const Header = () => {
           </li>
           <li><a href="#services" onClick={(e)=>{
             e.preventDefault()
-            scrollToSection(Card)
+            scrollToSection(cardRef)
           }}>Services</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#team">Team</a></li>
-          <li><a href="#blog">Blog</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><Link to="/portfolio">Feature</Link></li>
+          <li><Link to="/team">Team</Link></li>
+          <li><Link href="/privacy">Privacy Policy</Link></li>
+          <li><Link to="/contact">Contact</Link></li>
           <button className="start-btn">
             Get Started
           </button>
@@ -93,7 +94,7 @@ const Header = () => {
       <div ref={thirdRef}>
         <Third id="third" />
       </div>
-      <div ref={CardRef}>
+      <div ref={cardRef}>
         <Card id="services" />
       </div>
     </>

@@ -1,102 +1,117 @@
-import React, { useState, useEffect, useRef } from 'react';
-import './card.css';
-import Image1 from '../../Asset/images/Frame 14256.png';
-import Image2 from '../../Asset/images/Frame 14259.png';
-import Image3 from '../../Asset/images/Frame 14254.png';
-import Image4 from '../../Asset/images/Frame 14258.png';
+// import React, { useEffect, useRef } from "react";
+// import "./card.css";
 
-const Cards = () => {
-  const [expandedCard, setExpandedCard] = useState(null);
-  const cardRefs = useRef([]);
+// const AnimatedSection = () => {
 
-  const handleReadMore = (id) => {
-    setExpandedCard(expandedCard === id ? null : id);
-  };
 
-  // Function to truncate text to 50 words
-  const truncateText = (text, wordLimit = 50) => {
-    const words = text.split(' ');
-    return words.length > wordLimit ? words.slice(0, wordLimit).join(' ') + '...' : text;
-  };
+
+
+import React, { useEffect, useRef } from 'react';
+import './card.css'; // Import the CSS file
+
+import I1 from '../../Asset/images/b1.png'
+import I2 from '../../Asset/images/b2.png'
+import I3 from '../../Asset/images/b3.png'
+import I4 from '../../Asset/images/b4.png'
+import B1 from '../../Asset/images/1.png'
+import B2 from '../../Asset/images/2.png'
+import B3 from '../../Asset/images/3.png'
+import B4 from '../../Asset/images/4.png'
+import Banner from '../../Asset/images/Banner.jpg'
+
+const Tumile = () => {
+  const sectionRef = useRef(null);
 
   useEffect(() => {
-    const options = {
-      threshold: 0.1,
-    };
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('in-view');
-        } else {
-          entry.target.classList.remove('in-view');
-        }
-      });
-    }, options);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show-animation");
+          } else {
+            entry.target.classList.remove("show-animation");
+          }
+        });
+      },
+      { threshold: 0.5 } // Trigger when 50% of the section is visible
+    );
 
-    cardRefs.current.forEach((card) => {
-      observer.observe(card);
-    });
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
 
     return () => {
-      observer.disconnect();
+      if (sectionRef.current) observer.unobserve(sectionRef.current);
     };
   }, []);
+  return (<>
 
-  const cards = [
-    {
-      id: 1,
-      image: Image1,
-      heading: 'Connect Globally with NaariU App',
-      text: "Discover a world of new friendships with NaariU App! Whether you're looking to share experiences, explore new cultures, or simply find someone to chat with, NaariU connects you with people from around the globe. Expand your social circle, exchange ideas, and build meaningful connections with just a few taps. Embrace the joy of making friends worldwide with NaariU!",
-    },
-    {
-      id: 2,
-      image: Image2,
-      heading: "Stay Connected with Friends on NaariU",
-      text: "NaariU app makes staying in touch with friends easier and more fun than ever. Whether you're catching up with old friends or making new ones, our intuitive chat feature lets you send messages instantly, share photos, videos, and even voice notes. Create group chats to plan outings or just to keep everyone updated on the latest news. With NaariU, your social life is always at your fingertips, making every conversation meaningful and engaging. Stay connected, stay social, with NaariU.",
-    },
-    {
-      id: 3,
-      image: Image3,
-      heading: "Connect with Random Video Calling!",
-      text: "NaariU App brings a new way to meet and interact with people from around the world through random video calling. This innovative feature allows users to connect instantly with others, breaking the barriers of distance and time.",
-    },
-    {
-      id: 4,
-      image: Image4,
-      heading: "Explore Your NaariU App User Profile",
-      text: "In your NaariU app user profile, you have easy access to key features to enhance your experience. View your Coins Balance to keep track of your in-app currency. Access Account Info to update your personal details and manage your preferences. Enjoy a streamlined way to control and personalize your NaariU app experience!",
-    },
-  ];
-
-  return (
-    <>
-        <h1 className='card-Heading'>Get The App For Free And Start Now</h1>
-    <div className="custom-card-container">
-      {cards.map((card, index) => (
-        <div
-          key={card.id}
-          className="custom-card"
-          ref={(el) => (cardRefs.current[index] = el)}
-          style={{ transitionDelay: `${index * 0.2}s` }}  
-        >
-          <img src={card.image} alt={card.heading} className="custom-card-image" />
-          <div className="custom-card-text">
-            <h3>{card.heading}</h3>
-            <p>
-              {expandedCard === card.id
-                ? card.text
-                : truncateText(card.text, 50)} {/* Show 50 words by default */}
-            </p>
-            <button onClick={() => handleReadMore(card.id)} className="read-more-btn">
-              {expandedCard === card.id ? 'Read Less' : 'Read More'}
-            </button>
-          </div>
+    <h1 className='heading' style={{textAlign:'center',margin:'50px 0'}}>Our Services</h1>
+    <div className="tumile-container">
+      {/* Left Side Content */}
+      <div className="left-content">
+        <h1>Stay Connected with Friends on NaariU</h1>
+        <p>
+          NaariU app makes staying in touch with friends easier and more fun than ever. Whether you're catching up with old friends or making new ones, our intuitive chat feature lets you send messages instantly, share photos, videos, and even voice notes. Create group chats to plan outings or just to keep everyone updated on the latest news. With NaariU, your social life is always at your fingertips, making every conversation meaningful and engaging. Stay connected, stay social, with NaariU.
+        </p>
+        <div className="animated-images">
+          <img src={I1} alt="Image 1" />
+          <img src={I2} alt="Image 2" />
+          <img src={I3} alt="Image 3" />
+          <img src={I4} alt="Image 4" />
         </div>
-      ))}
-    </div>
-    </>
-  );
-};
+      </div>
 
-export default Cards;
+      {/* Image container */}
+      <div className="image-container">
+        <img className="center-image" src={B2} alt="Center" />
+        <div className="small-div top-right">
+          <p>Video Calls</p>
+        </div>
+        <div className="small-div top-left">
+          <p>Messages 📧s</p>
+        </div>
+        <div className="small-div bottom-left">
+          <p>Find Friends </p>
+        </div>
+        <div className="small-div bottom-right">
+          <p>Love Stories</p>
+        </div>
+      </div>
+    </div>
+    <div className="animated-section" ref={sectionRef}>
+      <div className="text-content">
+        <h2>
+          Connect with Random Video Calling!</h2>
+        <p>
+          NaariU App brings a new way to meet and interact with people from around the world through random video calling. This innovative feature allows users to connect instantly with others, breaking the barriers of distance and time.
+        </p>
+      </div>
+      <div className="image-wrapper">
+        <div className="circle top-right"></div>
+        <img src={B1} width={300} height={100} alt="Example" className="main-image" />
+        <div className="circle bottom-left"></div>
+      </div>
+    </div>
+
+    <div className="tumile-container">
+      {/* Left Side Content */}
+      <div className="left-content">
+        <h1>Explore Your NaariU App User Profile</h1>
+        <p>
+          In your NaariU app user profile, you have easy access to key features to enhance your experience. View your Coins Balance to keep track of your in-app currency. Access Account Info to update your personal details and manage your preferences. Enjoy a streamlined way to control and personalize your NaariU app experience! </p>
+
+      </div>
+
+      {/* Image container */}
+      <div className="image-container">
+        <img className="center-image" src={B3} alt="Center" />
+
+      </div>
+    </div>
+
+  </>
+
+  )
+}
+export default Tumile;
