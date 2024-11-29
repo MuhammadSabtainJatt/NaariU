@@ -1,0 +1,96 @@
+
+.team-section {
+  padding: 50px 20px;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+
+.heading-container small{
+    color: #280a47;
+}
+
+.heading-container h1 {
+    margin-bottom: 0;
+  font-size: 2.5rem;
+  color: #280a47;
+}
+
+.heading-container p {
+  font-size: 1rem;
+  color: #555;
+  margin: 10px 0 20px;
+}
+
+.heading-container hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 20px auto;
+  width: 50%;
+}
+
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.cards-container.zoom-in {
+  opacity: 1;
+  transform: scale(1);
+}
+
+
+.team-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 300px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  font-size: 1.2rem;
+  color: #280a47;
+  margin-bottom: 5px;
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 5px 0;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.icon {
+  font-size: 1.2rem;
+  color: #280a47;
+  transition: color 0.3s ease;
+}
+
+.icon:hover {
+  color: #7333bb;
+}

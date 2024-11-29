@@ -1,0 +1,67 @@
+/* Header Section */
+.privacy-header {
+    margin-top: 200px;
+    height: 20vh; /* Full viewport height */
+    background-color: #12133d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.privacy-heading {
+    font-size: 2.5rem;
+    text-align: center;
+    margin: 0; /* Prevent any extra spacing */
+}
+
+/* Content Section */
+.privacy-content {
+    padding: 50px 20px; /* Added padding for spacing */
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+/* Image Section */
+.image-section {
+    width: 50%;
+    height: auto;
+    text-align: center;
+    margin:  0;
+}
+
+.policy-image {
+    max-width: 50%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* Policy List */
+.policy-list h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    color: #280247;
+    margin-bottom: 10px;
+}
+
+.policy-list ul {
+    list-style-type: square; /* Unique List Style */
+    padding-left: 20px;
+    line-height: 1.8;
+}
+
+.policy-list ul li {
+    margin-bottom: 10px;
+    color: #333;
+    font-size: 1.2rem;
+}
+
+.policy-list ul li::marker {
+    color: #7333bb; /* Unique marker color */
+    font-size: 1.5rem;
+}

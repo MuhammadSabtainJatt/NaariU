@@ -70,16 +70,15 @@ const Header = () => {
             e.preventDefault()
             scrollToSection(cardRef)
           }}>Services</a></li>
-          <li><Link to="/portfolio">Feature</Link></li>
           <li><Link to="/team">Team</Link></li>
-          <li><Link href="/privacy">Privacy Policy</Link></li>
+          <li><Link to="/privacy">Privacy Policy</Link></li>
           <li><Link to="/contact">Contact</Link></li>
           <button className="start-btn">
             Get Started
           </button>
-          <div className="theme-toggle" onClick={toggleTheme}>
-            {darkMode ? <FaSun size={20} /> : <FaMoon size={20} />}
-          </div>
+            {/* <div className="theme-toggle" onClick={toggleTheme}>
+              {darkMode ? <FaSun size={20} /> : <FaMoon size={20} />}
+            </div> */}
         </ul>
         <label htmlFor="nav-toggle" className="icon-burger">
           <div className="line"></div>
