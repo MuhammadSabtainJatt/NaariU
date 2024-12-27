@@ -3,8 +3,6 @@ import { FaMoon, FaSun } from 'react-icons/fa';
 import Logo from '../../Asset/images/NaariU Logo.png';
 import './home.css';
 import Home from './hero';
-import Third from './thirdComponent';
-import Card from './card'
 import { Link } from 'react-router-dom';
 const Header = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -37,7 +35,6 @@ const Header = () => {
   };
 
   return (
-    <>
       <nav className={`header ${isScrolled ? 'scrolled' : ''}`}>
         <input type="checkbox" id="nav-toggle" />
         <div className="logo">
@@ -45,31 +42,18 @@ const Header = () => {
         </div>
         <ul className="links">
           <li>
-            <a
-              href="#hero"
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToSection(homeRef);
-              }}
+            <Link to="/"
             >
               Home
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="#about"
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToSection(thirdRef);
-              }}
+            <Link to="/about"
             >
               About
-            </a>
+            </Link>
           </li>
-          <li><a href="#services" onClick={(e)=>{
-            e.preventDefault()
-            scrollToSection(cardRef)
-          }}>Services</a></li>
+          <li><Link to="/services">Services</Link></li>
           <li><Link to="/team">Team</Link></li>
           <li><Link to="/privacy">Privacy Policy</Link></li>
           <li><Link to="/contact">Contact</Link></li>
@@ -86,17 +70,6 @@ const Header = () => {
           <div className="line"></div>
         </label>
       </nav>
-
-      <div ref={homeRef}>
-        <Home id="hero" />
-      </div>
-      <div ref={thirdRef}>
-        <Third id="third" />
-      </div>
-      <div ref={cardRef}>
-        <Card id="services" />
-      </div>
-    </>
   );
 };
 

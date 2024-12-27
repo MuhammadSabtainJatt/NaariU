@@ -46,7 +46,7 @@ const Tumile = () => {
   }, []);
   return (<>
 
-    <h1 className='heading' style={{textAlign:'center',margin:'50px 0'}}>Our Services</h1>
+    <h1 className='heading' style={{textAlign:'center',margin:'50px 0', marginTop:"150px"}}>Our Services</h1>
     <div className="tumile-container">
       {/* Left Side Content */}
       <div className="left-content">

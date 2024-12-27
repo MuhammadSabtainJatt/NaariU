@@ -1,12 +1,11 @@
 /* Header Section */
 .privacy-header {
-    margin-top: 200px;
+    margin-top: 100px;
     height: 20vh; /* Full viewport height */
-    background-color: #12133d;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: #280247;
 }
 
 .privacy-heading {
